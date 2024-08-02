@@ -43,6 +43,14 @@ jobs:
           sudo apt-get update
           python -m pip install --no-python-version-warning --disable-pip-version-check -r requirements.txt
 
-      - name: Run Dreamlabs Automation
+      - name: Run Dreamlabs Automation【Grid Trading】
         run: |
-          python my_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
+          python grid_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
+
+      - name: Run Dreamlabs Automation【Pairs Trading】
+        run: |
+          python hello_world_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
+
+      - name: Run Dreamlabs Automation【CB Trading】
+        run: |
+          python hello_world_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
