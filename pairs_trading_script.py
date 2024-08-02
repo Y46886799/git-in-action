@@ -2,7 +2,7 @@ import requests
 from loguru import logger
 
 
-def requests_get(url: str, headers, params):
+def requests_get(url: str, headers=None, params=None):
     # 发送 GET 请求
     if params is None:
         response = requests.get(url, headers=headers, timeout=(30, 300))
@@ -17,7 +17,7 @@ def requests_get(url: str, headers, params):
         logger.info("请求失败:", response.status_code)
 
 
-def requests_post(url: str, headers, data):
+def requests_post(url: str, headers=None, data=None):
     # 发送 POST 请求
     response = requests.post(url, headers=headers, json=data, timeout=(30, 300))
 
