@@ -13,7 +13,8 @@ on:
       - release/**
       - hotfix/**
   schedule:
-    # 每天在国际标准时间1,2,5,6点（北京时间+8，即9,10,13,14点）运行
+    # Runs at 01:30, 02:30, 05:30 and 06:30, Monday through Friday
+    # 北京时间+8，即9点30分,10点30分,13点30分,14点30分
     - cron: '30 1,2,5,6 * * 1-5'
 
 permissions:
