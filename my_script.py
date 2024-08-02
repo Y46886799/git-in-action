@@ -3,7 +3,7 @@ from loguru import logger
 
 def requests_get(url: str, headers):
     # 发送 GET 请求
-    response = requests.get(url, headers=headers,timeout=(10, 300))
+    response = requests.get(url, headers=headers,timeout=(30, 300))
 
     # 检查响应状态
     if response.status_code == 200:
@@ -16,7 +16,7 @@ def requests_get(url: str, headers):
 
 def requests_post(url: str, headers, data):
     # 发送 POST 请求
-    response = requests.post(url, headers=headers, json=data, timeout=(10, 300))
+    response = requests.post(url, headers=headers, json=data, timeout=(30, 300))
 
     # 检查响应状态
     if response.status_code == 200:
