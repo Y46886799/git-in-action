@@ -1,6 +1,6 @@
 import requests  
 
-def requests_get(url:str)
+def requests_get(url:str):
 	# 发送 GET 请求  
 	response = requests.get(url)  
 
@@ -13,7 +13,7 @@ def requests_get(url:str)
 	    print("请求失败:", response.status_code)
 
 
-def requests_post(url:str, data)
+def requests_post(url:str, data):
 	# 发送 POST 请求  
 	response = requests.post(url, json=data)  
 
