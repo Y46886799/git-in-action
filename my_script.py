@@ -36,4 +36,4 @@ if __name__ == "__main__":
 			  "grid_high": 10.35,
 			  "grid_num": 6
 			}
-	requests_post('http://dreamtown.synology.me:5181/grid/signals', data)
+	requests_get('http://dreamtown.synology.me:5181')
