@@ -15,7 +15,7 @@ on:
   schedule:
     # Runs at 09:30, Monday through Friday，and Sunday
     # 北京时间+8，17点30分
-    - cron: '30 9 * * 1-5,7'
+    - cron: '30 9 * * 1-5'
 
 permissions:
   contents: read
