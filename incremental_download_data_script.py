@@ -44,5 +44,9 @@ if __name__ == "__main__":
     requests_get('{}/incremental_download_data'.format(url_prefix), headers)
     logger.info("\n")
 
-    logger.info("***Step3:Hello World Again")
+    logger.info("***Step3:Download Data Weekend")
+    requests_get('{}/incremental_download_data_weekend'.format(url_prefix), headers)
+    logger.info("\n")
+
+    logger.info("***Step4:Hello World Again")
     requests_get(url_prefix, headers)

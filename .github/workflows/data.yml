@@ -13,9 +13,9 @@ on:
       - release/**
       - hotfix/**
   schedule:
-    # Runs at 09:30, Monday through Friday，and Sunday
+    # Runs at 09:30, Monday through Saturday
     # 北京时间+8，17点30分
-    - cron: '30 9 * * 1-5'
+    - cron: '30 9 * * 1-6'
 
 permissions:
   contents: read
