@@ -1,4 +1,4 @@
-name: Dreamlabs Automation
+name: Dreamlabs Download Data
 # makes little sense, spell-checker: disable
 on:
   pull_request:
