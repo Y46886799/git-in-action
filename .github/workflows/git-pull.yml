@@ -15,6 +15,6 @@ jobs:
         script: |
           whoami
           cd /volume1/docker/python-chromedriver/work/dreamlabs-cb
-          git pull
+          /usr/local/bin/git pull
           cd /volume1/docker/python-chromedriver/work/dreamlabs-pairs
-          git pull
+          /usr/local/bin/git pull
