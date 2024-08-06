@@ -12,4 +12,9 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: whoami
+        script: |
+          whoami
+          cd /volume1/docker/python-chromedriver/work/dreamlabs-cb
+          git pull
+          cd /volume1/docker/python-chromedriver/work/dreamlabs-pairs
+          git pull
