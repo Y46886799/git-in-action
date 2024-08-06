@@ -18,3 +18,4 @@ jobs:
           /usr/local/bin/git pull
           cd /volume1/docker/python-chromedriver/work/dreamlabs-pairs
           /usr/local/bin/git pull
+          sudo docker restart infallible_elion
