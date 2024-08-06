@@ -2,7 +2,7 @@ name: Remote SSH and git pull
 on: [push]
 jobs:
   build:
-    name: Build
+    name: Remote SSH and git pull
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
