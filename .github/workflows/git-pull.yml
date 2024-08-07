@@ -1,5 +1,20 @@
 name: Remote SSH and git pull
-on: [push]
+on:
+  pull_request:
+    branches:
+      - develop
+  push:
+    branches:
+      - master
+      - main
+      - develop
+      - factory
+      - release/**
+      - hotfix/**
+  schedule:
+    # Runs at 09:30, Monday through Saturday
+    # 北京时间+8，17点30分
+    - cron: '30 22 * * 1-6'
 jobs:
   build:
     name: Remote SSH and git pull
