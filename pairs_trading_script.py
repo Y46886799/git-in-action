@@ -63,7 +63,7 @@ if __name__ == "__main__":
         "exit_threshold": 0.5,
         "init_cash": 100000
     }
-    requests_get('{}/backtest/signals'.format(url_prefix), headers, signal_data)
+    requests_get('{}/backtest/signals'.format(url_prefix), headers=headers, params=signal_data)
     logger.info("\n")
 
     logger.info("***Step4:Hello World Again")
