@@ -4,21 +4,22 @@ import requests
 from loguru import logger
 
 
-def get_current_time(tz:str = "Asia/Shanghai", time_format:str = "%Y-%m-%d %H:%M:%S"):
+def get_current_time(tz: str = "Asia/Shanghai", time_format: str = "%Y-%m-%d %H:%M:%S"):
     current_time = dt.now(timezone(tz)).strftime(time_format)
     return current_time
 
 
-def get_current_date(tz:str = "Asia/Shanghai", date_format:str = "%Y-%m-%d"):
+def get_current_date(tz: str = "Asia/Shanghai", date_format: str = "%Y-%m-%d"):
     current_date = dt.now(timezone(tz)).strftime(date_format)
     return current_date
 
+
 def requests_get(url: str, headers=None, params=None):
-    # 发送 GET 请求
+    # 发送 GET 请求，连接超时30秒，响应超时60*60*2秒，即2个小时
     if params is None:
-        response = requests.get(url, headers=headers, timeout=(30, 300))
+        response = requests.get(url, headers=headers, timeout=(30, 60 * 60))
     else:
-        response = requests.get(url, params=params, headers=headers, timeout=(30, 300))
+        response = requests.get(url, params=params, headers=headers, timeout=(30, 60 * 60 * 2))
     # 检查响应状态
     if response.status_code == 200:
         logger.info("请求成功!")
@@ -29,8 +30,8 @@ def requests_get(url: str, headers=None, params=None):
 
 
 def requests_post(url: str, headers=None, data=None):
-    # 发送 POST 请求
-    response = requests.post(url, headers=headers, json=data, timeout=(30, 300))
+    # 发送 POST 请求，连接超时30秒，响应超时60*60*2秒，即2个小时
+    response = requests.post(url, headers=headers, json=data, timeout=(30, 60 * 60 * 2))
 
     # 检查响应状态
     if response.status_code == 200:
