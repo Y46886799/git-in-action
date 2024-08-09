@@ -1,32 +1,4 @@
-import requests
-from loguru import logger
-
-
-def requests_get(url: str, headers=None, params=None):
-    # 发送 GET 请求
-    if params is None:
-        response = requests.get(url, headers=headers, timeout=(30, 300))
-    else:
-        response = requests.get(url, params=params, headers=headers, timeout=(30, 300))
-    # 检查响应状态
-    if response.status_code == 200:
-        logger.info("请求成功!")
-        # 输出响应内容
-        logger.info(response.json())  # 将响应内容解析为 JSON
-    else:
-        logger.info("请求失败:", response.status_code)
-
-
-def requests_post(url: str, headers=None, data=None):
-    # 发送 POST 请求
-    response = requests.post(url, headers=headers, json=data, timeout=(30, 300))
-
-    # 检查响应状态
-    if response.status_code == 200:
-        logger.info("数据已创建!")
-        logger.info(response.json())
-    else:
-        logger.info("请求失败:", response.status_code)
+from utils import *
 
 
 if __name__ == "__main__":
@@ -36,7 +8,7 @@ if __name__ == "__main__":
         'Content-Type': 'application/json',
     }
     url_prefix = 'http://dreamtown.synology.me:5182'
-    logger.info("***Step1:Hello World")
+    logger.info("***Step1:Hello World,{}".format(get_current_time()))
     requests_get(url_prefix, headers)
     logger.info("\n")
 
@@ -66,5 +38,5 @@ if __name__ == "__main__":
     requests_get('{}/backtest/signals'.format(url_prefix), headers=headers, params=signal_data)
     logger.info("\n")
 
-    logger.info("***Step4:Hello World Again")
+    logger.info("***Step4:Hello World Again,{}".format(get_current_time()))
     requests_get(url_prefix, headers)
