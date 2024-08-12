@@ -17,7 +17,7 @@ def get_current_date(tz: str = "Asia/Shanghai", date_format: str = "%Y-%m-%d"):
 def requests_get(url: str, headers=None, params=None):
     # 发送 GET 请求，连接超时30秒，响应超时60*60*2秒，即2个小时
     if params is None:
-        response = requests.get(url, headers=headers, timeout=(30, 60 * 60))
+        response = requests.get(url, headers=headers, timeout=(30, 60 * 60 * 2))
     else:
         response = requests.get(url, params=params, headers=headers, timeout=(30, 60 * 60 * 2))
     # 检查响应状态
