@@ -12,6 +12,8 @@ on:
       - factory
       - release/**
       - hotfix/**
+    paths:   # 这里是用来指定哪个文件更改，才会触发的
+      - '.github/workflows/data.yml'
   schedule:
     # Runs at 09:30, Monday through Saturday
     # 北京时间+8，17点30分
