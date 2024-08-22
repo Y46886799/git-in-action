@@ -1,6 +1,7 @@
 name: Dreamlabs Download Data
 # makes little sense, spell-checker: disable
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - develop
