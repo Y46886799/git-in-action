@@ -1,6 +1,7 @@
 name: Dreamlabs Automation
 # makes little sense, spell-checker: disable
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - develop
