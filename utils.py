@@ -15,11 +15,11 @@ def get_current_date(tz: str = "Asia/Shanghai", date_format: str = "%Y-%m-%d"):
 
 
 def requests_get(url: str, headers=None, params=None):
-    # 发送 GET 请求，连接超时30秒，响应超时60*60*2秒，即2个小时
+    # 发送 GET 请求，连接超时30秒，响应超时60*60*4秒，即4个小时
     if params is None:
-        response = requests.get(url, headers=headers, timeout=(30, 60 * 60 * 2))
+        response = requests.get(url, headers=headers, timeout=(30, 60 * 60 * 4))
     else:
-        response = requests.get(url, params=params, headers=headers, timeout=(30, 60 * 60 * 2))
+        response = requests.get(url, params=params, headers=headers, timeout=(30, 60 * 60 * 4))
     # 检查响应状态
     if response.status_code == 200:
         logger.info("请求成功!")
@@ -30,8 +30,8 @@ def requests_get(url: str, headers=None, params=None):
 
 
 def requests_post(url: str, headers=None, data=None):
-    # 发送 POST 请求，连接超时30秒，响应超时60*60*2秒，即2个小时
-    response = requests.post(url, headers=headers, json=data, timeout=(30, 60 * 60 * 2))
+    # 发送 POST 请求，连接超时30秒，响应超时60*60*4秒，即4个小时
+    response = requests.post(url, headers=headers, json=data, timeout=(30, 60 * 60 * 4))
 
     # 检查响应状态
     if response.status_code == 200:
