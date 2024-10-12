@@ -16,7 +16,7 @@ if __name__ == "__main__":
     requests_get('{}/backtest/download_data'.format(url_prefix), headers)
     logger.info("\n")
 
-    logger.info("***Step3:Generate Signals")
+    logger.info("***Step3:Generate Signals：药明康德")
     # strategy_type=cointegration&
     # backtest_start=2023-01-01&backtest_end=2023-12-31&
     # stk0=02359&stk1=603259&
@@ -29,6 +29,51 @@ if __name__ == "__main__":
         "backtest_end": "2030-12-31",
         "stk0": "02359",
         "stk1": "603259",
+        "loss_limit": -0.1,
+        "lookback": 40,
+        "enter_threshold": 2.0,
+        "exit_threshold": 0.5,
+        "init_cash": 100000
+    }
+    requests_get('{}/backtest/signals'.format(url_prefix), headers=headers, params=signal_data)
+    logger.info("\n")
+
+
+    logger.info("***Step3:Generate Signals：中国石油")
+    # strategy_type=cointegration&
+    # backtest_start=2023-01-01&backtest_end=2023-12-31&
+    # stk0=02359&stk1=603259&
+    # loss_limit=-0.1&
+    # lookback=40&
+    # enter_threshold=2.0&exit_threshold=0.5&init_cash=100000
+    signal_data = {
+        "strategy_type": "cointegration",
+        "backtest_start": "2023-01-01",
+        "backtest_end": "2030-12-31",
+        "stk0": "00857",
+        "stk1": "601857",
+        "loss_limit": -0.1,
+        "lookback": 40,
+        "enter_threshold": 2.0,
+        "exit_threshold": 0.5,
+        "init_cash": 100000
+    }
+    requests_get('{}/backtest/signals'.format(url_prefix), headers=headers, params=signal_data)
+    logger.info("\n")
+
+    logger.info("***Step3:Generate Signals：中国石化")
+    # strategy_type=cointegration&
+    # backtest_start=2023-01-01&backtest_end=2023-12-31&
+    # stk0=02359&stk1=603259&
+    # loss_limit=-0.1&
+    # lookback=40&
+    # enter_threshold=2.0&exit_threshold=0.5&init_cash=100000
+    signal_data = {
+        "strategy_type": "cointegration",
+        "backtest_start": "2023-01-01",
+        "backtest_end": "2030-12-31",
+        "stk0": "00386",
+        "stk1": "600028",
         "loss_limit": -0.1,
         "lookback": 40,
         "enter_threshold": 2.0,
