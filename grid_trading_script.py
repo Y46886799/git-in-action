@@ -17,7 +17,7 @@ if __name__ == "__main__":
         "source": "akshare_stock",
         "freq": "1d"
     }
-    requests_post('http://dreamtown.synology.me:5181/grid_data', headers, download_data)
+    requests_post('http://dreamtown.synology.me:5181/grid/data', headers, download_data)
     logger.info("\n")
 
     logger.info("***Step3:Generate Signals：艾融软件")
