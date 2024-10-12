@@ -20,11 +20,26 @@ if __name__ == "__main__":
     requests_post('http://dreamtown.synology.me:5181/grid_data', headers, download_data)
     logger.info("\n")
 
-    logger.info("***Step3:Generate Signals")
+    logger.info("***Step3:Generate Signals：艾融软件")
     signal_data = {
           "start_date": "2023-08-21",
           "end_date": "2030-12-31",
           "backtest_config": "grid_arrj_1d",
+          "stock_abbr": "arrj",
+          "strategy_name": "trend_following",
+          "grid_low": 6.25,
+          "grid_high": 10.35,
+          "grid_num": 6
+    }
+    requests_post('http://dreamtown.synology.me:5181/grid/signals', headers, signal_data)
+    logger.info("\n")
+
+    logger.info("***Step3:Generate Signals：长江电力")
+    signal_data = {
+          "start_date": "2023-08-21",
+          "end_date": "2030-12-31",
+          "backtest_config": "grid_cjdl_1d",
+          "stock_abbr": "cjdl",
           "strategy_name": "trend_following",
           "grid_low": 6.25,
           "grid_high": 10.35,
