@@ -1,4 +1,4 @@
-name: Dreamlabs IPO
+name: Dreamlabs A-Share IPO
 # makes little sense, spell-checker: disable
 on:
   workflow_dispatch:
