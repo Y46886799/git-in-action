@@ -9,11 +9,11 @@ on:
     branches:
       - develop
     paths:   # 这里是用来指定哪个文件更改，才会触发的
-      - '.github/workflows/main.yml'
+      - '.github/workflows/ipo.yml'
   schedule:
     # Runs at 01:30, 02:30, 05:30 and 06:30, Monday through Friday
     # 北京时间+8，即9点30分,10点30分,13点30分,14点30分
-    - cron: '0 1,2,5,6 * * 1-5'
+    - cron: '0 2 * * 1-5'
 
 permissions:
   contents: read
@@ -43,14 +43,14 @@ jobs:
           sudo apt-get update
           python -m pip install --no-python-version-warning --disable-pip-version-check -r requirements.txt
 
-      - name: Run Dreamlabs Automation【Grid Trading】
+      - name: Run Dreamlabs IPO【Stock】
         run: |
-          python grid_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
+          python ipo_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
 
-      - name: Run Dreamlabs Automation【Pairs Trading】
+      - name: Run Dreamlabs IPO【Convertible Bond】
         run: |
-          python pairs_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
+          python ipo_cb_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
 
-      - name: Run Dreamlabs Automation【CB Trading】
+      - name: Run Dreamlabs IPO
         run: |
           python hello_world_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
