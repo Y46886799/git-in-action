@@ -27,3 +27,7 @@ if __name__ == "__main__":
 
     logger.info("***Step4:Hello World Again,{}".format(get_current_time()))
     requests_get(base_url, headers)
+
+    import time
+    # 暂停 30 秒  
+    time.sleep(30) 
