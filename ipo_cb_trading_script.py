@@ -12,11 +12,17 @@ if __name__ == "__main__":
     logger.info("\n")
 
     logger.info("***Step2:Download convertible bond IPO Data")
-    requests_get('{}/current_cb_ipo'.format(base_url), headers)
+    try:
+        requests_get('{}/current_cb_ipo'.format(base_url), headers)
+    except Exception as e:  
+        logger.error(f"Download convertible bond IPO Data Error: {e}")
     logger.info("\n")
 
     logger.info("***Step3:Participate convertible bond IPO")
-    requests_get('{}/auto_bond_conv'.format(base_url), headers)
+    try:
+        requests_get('{}/auto_bond_conv'.format(base_url), headers)
+    except Exception as e:
+        logger.error(f"Participate convertible bond IPO Error: {e}")
     logger.info("\n")
 
     logger.info("***Step4:Hello World Again,{}".format(get_current_time()))
