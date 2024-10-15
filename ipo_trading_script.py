@@ -12,11 +12,17 @@ if __name__ == "__main__":
     logger.info("\n")
 
     logger.info("***Step2:Download Stock IPO Data")
-    requests_get('{}/current_stock_ipo'.format(base_url), headers)
+    try:
+        requests_get('{}/current_stock_ipo'.format(base_url), headers)
+    except Exception as e:
+        logger.error(f"Download Stock IPO Data Error: {e}") 
     logger.info("\n")
 
     logger.info("***Step3:Participate Stock IPO")
-    requests_get('{}/auto_ipo'.format(base_url), headers)
+    try:
+        requests_get('{}/auto_ipo'.format(base_url), headers)
+    except Exception as e:
+        logger.error(f"Participate Stock IPO Error: {e}") 
     logger.info("\n")
 
     logger.info("***Step4:Hello World Again,{}".format(get_current_time()))
