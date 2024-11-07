@@ -1,4 +1,4 @@
-name: Dreamlabs A-Share IPO
+name: Dreamlabs Reverse Repo
 # makes little sense, spell-checker: disable
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ on:
   schedule:
     # Runs at 01:30, 02:30, 05:30 and 06:30, Monday through Friday
     # 北京时间+8，即14点执行
-    - cron: '0 6 * * 1-5'
+    - cron: '30 6 * * 1-5'
 
 permissions:
   contents: read
@@ -43,18 +43,10 @@ jobs:
           sudo apt-get update
           python -m pip install --no-python-version-warning --disable-pip-version-check -r requirements.txt
 
-      - name: Run Dreamlabs IPO【Stock】
+      - name: Run Reverse Repo
         run: |
-          python ipo_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
+          python reverse_repo_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
 
-      - name: Run Dreamlabs IPO【BJ Stock】
-        run: |
-          python ipo_bj_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
-
-      - name: Run Dreamlabs IPO【Convertible Bond】
-        run: |
-          python ipo_cb_trading_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
-
-      - name: Dreamlabs IPO End
+      - name: Dreamlabs Reverse Repo End
         run: |
           python hello_world_script.py --no-other-python --skip-reflection-test --skip-all-cpython-tests --assume-yes-for-downloads
