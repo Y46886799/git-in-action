@@ -11,21 +11,21 @@ if __name__ == "__main__":
     requests_get(base_url, headers)
     logger.info("\n")
 
-    logger.info("***Step2:Download Stock IPO Data")
+    logger.info("***Step2:The third account start to reverse repo.")
     try:
-        requests_get('{}/current_stock_ipo'.format(base_url), headers)
+        requests_post('{}/reverse_repo'.format(base_url), headers)
     except Exception as e:
-        logger.error(f"Download Stock IPO Data Error: {e}") 
+        logger.error(f"The third account start to reverse repo Error: {e}") 
     logger.info("\n")
 
-    logger.info("***Step3:Participate Stock IPO")
+    logger.info("***Step2:The third account start to reverse repo.")
     try:
-        requests_get('{}/auto_ipo'.format(base_url), headers)
+        requests_post('{}/reverse_repo'.format(base_url), headers)
     except Exception as e:
-        logger.error(f"Participate Stock IPO Error: {e}") 
+        logger.error(f"The third account start to reverse repo Error: {e}") 
     logger.info("\n")
 
-    logger.info("***Step4:Hello World Again,{}".format(get_current_time()))
+    logger.info("***Step3:Hello World Again,{}".format(get_current_time()))
     requests_get(base_url, headers)
 
     import time
