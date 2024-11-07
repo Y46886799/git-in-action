@@ -11,16 +11,62 @@ if __name__ == "__main__":
     requests_get(base_url, headers)
     logger.info("\n")
 
-    logger.info("***Step2:The third account start to reverse repo.")
+    logger.info("***Step2:The first account start to reverse repo.")
     try:
-        requests_post('{}/reverse_repo'.format(base_url), headers)
+        params = {
+                  "account_num": 1,
+                  "market_type": "sh",
+                  "days": "1days"
+        }
+        requests_post('{}/reverse_repo'.format(base_url),headers, params)
+    except Exception as e:
+        logger.error(f"The third account start to reverse repo Error: {e}") 
+    logger.info("\n")
+
+    logger.info("***Step2:The seconde account start to reverse repo.")
+    try:
+        params = {
+                  "account_num": 2,
+                  "market_type": "sh",
+                  "days": "1days"
+        }
+        requests_post('{}/reverse_repo'.format(base_url),headers, params)
     except Exception as e:
         logger.error(f"The third account start to reverse repo Error: {e}") 
     logger.info("\n")
 
     logger.info("***Step2:The third account start to reverse repo.")
     try:
-        requests_post('{}/reverse_repo'.format(base_url), headers)
+        params = {
+                  "account_num": 3,
+                  "market_type": "sh",
+                  "days": "1days"
+        }
+        requests_post('{}/reverse_repo'.format(base_url),headers, params)
+    except Exception as e:
+        logger.error(f"The third account start to reverse repo Error: {e}") 
+    logger.info("\n")
+
+    logger.info("***Step2:The forth account start to reverse repo.")
+    try:
+        params = {
+                  "account_num": 4,
+                  "market_type": "sh",
+                  "days": "1days"
+        }
+        requests_post('{}/reverse_repo'.format(base_url),headers, params)
+    except Exception as e:
+        logger.error(f"The third account start to reverse repo Error: {e}") 
+    logger.info("\n")
+
+    logger.info("***Step2:The fifth account start to reverse repo.")
+    try:
+        params = {
+                  "account_num": 5,
+                  "market_type": "sh",
+                  "days": "1days"
+        }
+        requests_post('{}/reverse_repo'.format(base_url),headers, params)
     except Exception as e:
         logger.error(f"The third account start to reverse repo Error: {e}") 
     logger.info("\n")
