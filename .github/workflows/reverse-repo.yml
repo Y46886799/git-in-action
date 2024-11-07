@@ -9,7 +9,7 @@ on:
     branches:
       - develop
     paths:   # 这里是用来指定哪个文件更改，才会触发的
-      - '.github/workflows/ipo.yml'
+      - '.github/workflows/reverse-repo.yml'
   schedule:
     # Runs at 01:30, 02:30, 05:30 and 06:30, Monday through Friday
     # 北京时间+8，即14点20执行
