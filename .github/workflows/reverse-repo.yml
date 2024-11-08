@@ -12,8 +12,8 @@ on:
       - '.github/workflows/reverse-repo.yml'
   schedule:
     # Runs at 01:30, 02:30, 05:30 and 06:30, Monday through Friday
-    # 北京时间+8，即14点20执行
-    - cron: '20 6 * * 1-5'
+    # 北京时间+8，即14点25执行
+    - cron: '25 6 * * 1-5'
 
 permissions:
   contents: read
