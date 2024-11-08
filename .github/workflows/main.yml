@@ -1,5 +1,6 @@
 name: Dreamlabs Automation
 # makes little sense, spell-checker: disable
+# 先执行网格交易模拟盘、再执行配对交易模拟盘
 on:
   workflow_dispatch:
   pull_request:
