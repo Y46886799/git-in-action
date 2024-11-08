@@ -10,8 +10,7 @@ on:
     paths:   # 这里是用来指定哪个文件更改，才会触发的
       - '.github/workflows/git-pull.yml'
   schedule:
-    # Runs at 09:30, Monday through Saturday
-    # 北京时间+8，17点30分
+    # 北京时间+8，周一至周六，次日早间6点30分执行
     - cron: '30 22 * * 1-6'
 jobs:
   build:
