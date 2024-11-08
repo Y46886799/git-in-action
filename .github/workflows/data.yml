@@ -12,7 +12,7 @@ on:
       - '.github/workflows/data.yml'
   schedule:
     # Runs at 09:30, Monday through Saturday
-    # 北京时间+8，晚间19点30分
+    # 北京时间+8，周一至周六晚间19点30分执行
     - cron: '30 11 * * 1-6'
 
 permissions:
