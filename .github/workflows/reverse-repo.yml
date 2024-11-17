@@ -11,7 +11,7 @@ on:
     paths:   # 这里是用来指定哪个文件更改，才会触发的
       - '.github/workflows/reverse-repo.yml'
   schedule:
-    # 北京时间+8，周一至周五，下午即14点25分执行
+    # 北京时间+8，周一至周五，即计划下午14点25分执行，实际为下午14点50分左右执行
     - cron: '25 6 * * 1-5'
 
 permissions:
